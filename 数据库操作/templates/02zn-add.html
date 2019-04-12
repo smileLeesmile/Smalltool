@@ -1,0 +1,54 @@
+{% extends "01-index.html" %}
+
+{% block index %}
+<form action="/02zn-add" method="POST">
+    <p>
+        版本：<input type="text" name="version">
+    </p>
+    <p>
+        权限编号：<input type="text" name="authoritynumber">
+    </p>
+    <p>
+        申请人：<input type="text" name="applyuser">
+    </p>
+    <p>
+        变更类型：<select name="changetype">
+                <option value="增加">增加</option>
+                <option value="删除">删除</option>
+                <option value="更新">更新</option>
+                <option value="查询">查询</option>
+            </select>
+    </p>
+    <p>
+        权限类别：<select name="authoritytype">
+                <option value="网络设备">网络设备</option>
+                <option value="网页服务">网页服务</option>
+            </select>
+    </p>
+    <p>
+        根节点：<input type="text" name="rootnode">
+    </p>
+    <p>
+        权限节点：<input type="text" name="rootname">
+    </p>
+    <p>
+        权限名称：<input type="text" name="authorityname">
+    </p>
+    <p>
+        权限描述：<input type="text" name="authoritydescription">
+    </p>
+    <p>
+        GUI操作接口：<input type="text" name="guioperateentrance">
+    </p>
+    <p>
+        依赖接口：<input type="text" name="dependecy">
+    </p>
+    <p>
+        用户影响：<input type="text" name="userimpact">
+    </p>
+    <p>
+        <input type="submit" name="注册">
+        <a href="/01-index">返回</a>
+    </p>
+</form>
+{% endblock  %}

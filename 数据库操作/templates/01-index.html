@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <form action="/03-query" method="POST">
+    版本：<input type="text" name="version">
+    权限编号：<input type="text" name="authoritynumber">
+    <input type="submit" name="提交">
+        <a href="/01-index" value="返回">返回</a>
+    <a href="/02zn-add">增加</a>
+    <a href="/02en-add">add</a>
+    <!--<a href="/03-query">查询</a>-->
+    <!--<a href="/03en-inquire">inquire</a>-->
+    </form>
+</div>
+{% block index %}
+{% endblock %}
+</body>
+</html>

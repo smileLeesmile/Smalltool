@@ -1,0 +1,40 @@
+{% extends  "01-index.html"%}
+{% block index %}
+<table border="1" width="1600">
+    <tr>
+        <th>版本</th>
+        <th>权限编号</th>
+        <th>申请人</th>
+        <th>变更类型</th>
+        <th>权限类别</th>
+        <th>根节点</th>
+        <th>权限节点</th>
+        <th>权限名称</th>
+        <th>权限描述</th>
+        <th>GUI操作入口</th>
+        <th>依赖权限</th>
+        <th>用户影响</th>
+        <th>操作</th>
+    </tr>
+    {% for u in rs %}
+    <tr>
+        <td> {{u.version}} </td>
+        <td> {{u.authoritynumber}} </td>
+        <td> {{u.applyuser}} </td>
+        <td> {{u.changetype}}</td>
+        <td> {{u.authoritytype}}</td>
+        <td> {{u.rootnode}} </td>
+        <td> {{u.rootname}} </td>
+        <td> {{u.authorityname}} </td>
+        <td> {{u.authoritydescription}} </td>
+        <td> {{u.guioperateentrance}} </td>
+        <td> {{u.dependecy}} </td>
+        <td> {{u.userimpact}} </td>
+        <td>
+            <a href="/04-update?id={{u.authoritynumber}}&id1={{u.changetype}}">更新</a>
+            <a href="/05-delete?id={{u.authoritynumber}}">删除</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends "01-index.html" %}
+{% block  index%}
+<form action="/04-update" method="POST">
+    {% for i in mess %}
+    <p>
+        版本：<input type="text" name="version" value={{i.version}}>
+    </p>
+    <p>
+        权限编号：<input type="text" name="authoritynumber" value="{{i.authoritynumber}}">
+    </p>
+    <p>
+        申请人：<input type="text" name="applyuser" value="{{i.applyuser}}">
+    </p>
+    <p>
+        变更类型：<select name="changetype">
+        <option value="add">add</option>
+                <option value="sub">sub</option>
+                <option value="update">update</option>
+                <option value="inquire">inquire</option>
+                <!--<option value="{{i.changetype}}">{{i.changetype}}</option>-->
+            </select>
+    </p>
+    <p>
+        权限类别：<select name="authoritytype">
+        <option value="network equipment">network equipment</option>
+                <option value="network service">network service</option>
+                <!--<option value="{{i.authoritytype}}">{{i.authoritytype}}</option>-->
+            </select>
+    </p>
+    <p>
+        根节点：<input type="text" name="rootnode" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[\u4e00-\u9fa5]/g,''))" onkeyup="this.value=this.value.replace(/[\u4e00-\u9fa5]/g,'')" >
+    </p>
+    <p>
+        权限节点：<input type="text" name="rootname" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[\u4e00-\u9fa5]/g,''))" onkeyup="this.value=this.value.replace(/[\u4e00-\u9fa5]/g,'')">
+    </p>
+    <p>
+        权限名称：<input type="text" name="authorityname" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[\u4e00-\u9fa5]/g,''))" onkeyup="this.value=this.value.replace(/[\u4e00-\u9fa5]/g,'')">
+    </p>
+    <p>
+        权限描述：<input type="text" name="authoritydescription" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[\u4e00-\u9fa5]/g,''))" onkeyup="this.value=this.value.replace(/[\u4e00-\u9fa5]/g,'')">
+    </p>
+    <p>
+        GUI操作接口：<input type="text" name="guioperateentrance" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[\u4e00-\u9fa5]/g,''))" onkeyup="this.value=this.value.replace(/[\u4e00-\u9fa5]/g,'')">
+    </p>
+    <p>
+        依赖接口：<input type="text" name="dependecy" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[\u4e00-\u9fa5]/g,''))" onkeyup="this.value=this.value.replace(/[\u4e00-\u9fa5]/g,'')">
+    </p>
+    <p>
+        用户影响：<input type="text" name="userimpact" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[\u4e00-\u9fa5]/g,''))" onkeyup="this.value=this.value.replace(/[\u4e00-\u9fa5]/g,'')">
+    </p>
+    <p>
+        <input type="submit" name="注册">
+        <a href="/01-index">返回</a>
+    </p>
+    {% endfor %}
+</form>
+{% endblock %}
